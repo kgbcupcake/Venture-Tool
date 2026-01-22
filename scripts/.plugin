@@ -1,0 +1,7 @@
+name=sign-artifacts
+version=1.0.1
+api=1
+level=full
+requires=openssl cosign
+author=you
+sha256=...

@@ -1,0 +1,35 @@
+﻿#!/bin/bash
+
+# 🪐 VENTURE PROJECT CONFIGURATION
+# This file defines the metadata for the Venture Orchestration Suite.
+
+# 🆔 Project Identity
+PROJECT_NAME="Sentry.IO"
+PROJECT_VERSION="1.0.1"
+PROJECT_TYPE="dotnet-tool" # e.g., web-api, library, console
+
+# 🛠 Build Settings
+BUILD_CONFIGURATION="Release"
+DOTNET_VERSION="8.0"
+
+# 🚀 Ship Logic Hooks
+# Define custom commands to run during specific phases
+PRE_HEALTH_CHECK_CMD="dotnet clean"
+POST_SHIP_CMD="echo 'Deployment successful!'"
+
+# 🌐 Git Alignment
+REMOTE_ORIGIN="github.com:kgbcupcake/Sentry.IO.git"
+PRIMARY_BRANCH="main"
+
+# ⚖️ Intertwine Overrides
+STRICT_GIT_CLEANLINESS=true # If true, Venture will block ship on uncommitted changes [cite: 2026-01-13]
+AUTO_REBASE_ON_GENESIS=true # Automatically handle remote divergence [cite: 2026-01-22]
+
+💻 Implementation Guide
+To make this template usable within your suite, follow these steps:
+
+Placement: Instruct users to save this file as .project.sh in their project root.
+
+Permissions: The Doctor command should verify this file is executable (chmod +x .project.sh).
+
+Loading: Your C# framework should check for this file's existence before executing the Ship Logic [cite: 2026-01-13].

@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>Venture.Tool.Framework</PackageId>
+		<AssemblyName>Venture.Tool.Framework</AssemblyName>
+		<Version>1.0.1</Version>
+		<Authors>onlyo</Authors>
+		<Company>Venture Systems</Company>
+		<Description>A project-agnostic orchestration suite designed to eliminate manual code migration through the Prometheus Protocol.</Description>
+		<PackageTags>dotnet;cli;automation;deployment;orchestration;devops</PackageTags>
+		<RepositoryUrl>https://github.com/kgbcupcake/Venture-Tool</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/kgbcupcake/Venture-Tool</PackageProjectUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackAsTool>true</PackAsTool>
+		<ToolCommandName>venture</ToolCommandName>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>./nupkg</PackageOutputPath>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="scripts\**\*" Pack="true" PackagePath="tools\$(TargetFramework)\any\scripts\">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+
+		<Content Update="bin\**\*;obj\**\*" Pack="false" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Spectre.Console" Version="0.54.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+		<PackageReference Include="NUnit" Version="4.0.1" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+		<PackageReference Include="NUnit.Analyzers" Version="3.10.0" />
+		<PackageReference Include="coverlet.collector" Version="6.0.0" />
+	</ItemGroup>
+
+</Project>

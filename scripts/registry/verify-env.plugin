@@ -1,0 +1,6 @@
+name=verify-env
+version=1.0.0
+description="Ensures critical API keys exist before shipping"
+author=Prometheus-Core
+requires=grep
+phase=pre-ship

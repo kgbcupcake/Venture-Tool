@@ -1,0 +1,15 @@
+# .NET Artifacts
+bin/
+obj/
+nupkg/
+*.user
+*.suo
+
+# OS Junk
+.DS_Store
+Thumbs.db
+
+# Venture Specifics
+.framework/
+.vs/
+Venture-Tool/

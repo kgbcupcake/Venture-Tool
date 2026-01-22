@@ -1,0 +1,12 @@
+# Plugin Manifest
+
+name=sign-artifacts
+version=1.0.1
+description="Cryptographically signs release artifacts using OpenSSL"
+author=Prometheus-Core
+
+# Dependencies required for this plugin to run
+requires=openssl
+
+# The phase where this plugin injects itself
+phase=pre-ship
